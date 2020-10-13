@@ -13,7 +13,6 @@ const {
   InteractionManager,
 } = ReactNative;
 
-const ViewPagerAndroid = require('@react-native-community/viewpager');
 const TimerMixin = require('react-timer-mixin');
 const ViewPager = require('@react-native-community/viewpager');
 
@@ -120,7 +119,7 @@ const ScrollableTabView = createReactClass({
       this.updateSceneKeys({ page: this.state.currentPage, children: this.props.children, });
     }
 
-    if (this.props.page >= 0 && this.props.page !== this.state.currentPage) {
+    if (this.props.page !== prevProps.page && this.props.page >= 0 && this.props.page !== this.state.currentPage) {
       this.goToPage(this.props.page);
     }
   },
